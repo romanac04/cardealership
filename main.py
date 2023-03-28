@@ -65,12 +65,12 @@ while True:
             if options == 'b':
                 selected_bike = bikes[choice - 1]
                 selected_vehicle = Motorcycle(selected_bike.make, selected_bike.miles, selected_bike.top_speed, selected_bike.price)
-                print(f" {selected_bike} bike added.")
+                print(f" {selected_bike.make} bike added.")
                 vehicles_to_compare.append(selected_vehicle)
             elif options == 't':
                 selected_truck = trucks[choice - 1]
                 selected_vehicle = Truck(selected_truck.make, selected_truck.miles, selected_truck.price)
-                print(f" {selected_truck} truck added.")
+                print(f" {selected_truck.make} truck added.")
                 vehicles_to_compare.append(selected_vehicle)
         elif compare == "n":
             break
@@ -81,7 +81,7 @@ while True:
             for vehicle in vehicles_to_compare:
                 vehicle.make_noise()
                 print(f"{vehicle.make} ({vehicle.miles} miles, ${vehicle.price})")
-                print("Thank you and goodbye!")
-                break
-        elif question == "n":
-            break
+        break
+        if question == "n":
+            print("Thank you and goodbye!")
+    break
